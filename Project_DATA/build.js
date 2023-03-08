@@ -200,17 +200,30 @@ var __defProp = Object.defineProperty;
 var __name = (target, value) => __defProp(target, "name", { value, configurable: true });
 
 class Component extends rogue_engine__WEBPACK_IMPORTED_MODULE_0__.Component {
-  awake() {
-  }
   start() {
-    console.log(window.atob("Q2hlY2sgY29uc29sZSBsb2cgY3V6IGltIG5vdCBhIGZyb250ZW5kIGRldg"));
-    console.log(new Date());
-  }
-  update() {
+    let diff = Shizz.diff_hours(Shizz.date);
+    if (diff > 0) {
+      console.log(window.atob(Shizz.f));
+    } else {
+      console.log(diff);
+    }
   }
 }
 __name(Component, "Component");
 rogue_engine__WEBPACK_IMPORTED_MODULE_0__.registerComponent(Component);
+var Shizz;
+(function(Shizz2) {
+  Shizz2.f = `Q2hlY2sgY29uc29sZSBsb2cgY3V6IGltIG5vdCBhIGZyb250ZW5kIGRldg`;
+  Shizz2.date = new Date("March 8, 2023 18:0:0");
+  function diff_hours(dt1) {
+    let dt2 = new Date();
+    var diff = (dt2.getTime() - dt1.getTime()) / 1e3;
+    diff /= 60 * 60;
+    return Math.round(diff);
+  }
+  Shizz2.diff_hours = diff_hours;
+  __name(diff_hours, "diff_hours");
+})(Shizz || (Shizz = {}));
 
 })();
 
